@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "eslint-format": "eslint --fix --format node_modules/eslint-friendly-formatter/index.js",
     "postinstall": "simple-git-hooks"
   },
   "keywords": [],
@@ -33,7 +34,7 @@
   },
   "lint-staged": {
     "src/**/*.{vue,js,json,jsx,ts,tsx}": [
-      "npm run eslint-format"
+      "pnpm run eslint-format"
     ]
   },
   "engines": {
