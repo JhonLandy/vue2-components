@@ -17,7 +17,7 @@ module.exports = {
     commonjs: true,
   },
   extends: [
-    "plugin:vue/vue3-recommended",
+    "plugin:vue/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
