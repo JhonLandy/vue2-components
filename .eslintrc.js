@@ -25,6 +25,6 @@ module.exports = {
     "no-var": "error",
     "no-empty": "warn",
     "vue/multi-word-component-names": "off",
-    "no-def": "error"
+    "no-undef": "error"
   },
 };

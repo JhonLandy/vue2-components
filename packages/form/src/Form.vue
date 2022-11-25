@@ -1,14 +1,7 @@
-
 <template>
-  <div>form is prepare111</div>
+  <div>form is prepare</div>
 </template>
 
-<script>
-export default {
+<script></script>
 
-}
-</script>
-
-<style>
-
-</style>
+<style></style>

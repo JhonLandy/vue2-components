@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "eslint-format": "eslint --fix --format node_modules/eslint-friendly-formatter/index.js",
-    "postinstall": "simple-git-hooks"
+    "postinstall": "pnpm simple-git-hooks"
   },
   "keywords": [],
   "author": "CC",
@@ -14,6 +14,7 @@
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "autoprefixer": "^10.4.13",
+    "chalk": "^5.1.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
@@ -33,7 +34,7 @@
     "commit-msg": "node scripts/verifyCommit.mjs"
   },
   "lint-staged": {
-    "src/**/*.{vue,js,json,jsx,ts,tsx}": [
+    "packages/**/*.{vue,js,json,jsx,ts,tsx}": [
       "pnpm run eslint-format"
     ]
   },
