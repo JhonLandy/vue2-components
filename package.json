@@ -3,35 +3,55 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "node scripts/build.js -f esm",
     "eslint-format": "eslint --fix --format node_modules/eslint-friendly-formatter/index.js",
-    "postinstall": "pnpm simple-git-hooks"
+    "postinstall": "pnpm simple-git-hooks",
+    "test": "node ./utils/index.js"
   },
   "keywords": [],
   "author": "CC",
   "license": "ISC",
   "devDependencies": {
+    "@antfu/eslint-config-vue": "^0.39.7",
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@types/node": "^20.4.0",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "@vue/component-compiler": "^4.2.4",
     "autoprefixer": "^10.4.13",
     "chalk": "^5.1.2",
     "cross-env": "^7.0.3",
-    "eslint": "^8.28.0",
+    "esbuild": "^0.18.11",
+    "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.8.0",
+    "execa": "^7.1.1",
     "lint-staged": "^13.0.3",
+    "minimist": "^1.2.8",
+    "ora": "^6.3.1",
     "postcss": "8.1.0",
     "prettier": "^2.8.0",
     "rollup": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-polyfill-node": "^0.12.0",
+    "rollup-plugin-vue": "5.1.9",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^4.9.3",
-    "vue-eslint-parser": "^9.1.0"
+    "vue-eslint-parser": "^9.1.0",
+    "vue-template-compiler": "^2.7.14"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",
-    "commit-msg": "node scripts/verifyCommit.mjs"
+    "commit-msg": "node scripts/verifyCommit.js"
   },
   "lint-staged": {
     "packages/**/*.{vue,js,json,jsx,ts,tsx}": [
@@ -41,5 +61,8 @@
   "engines": {
     "node": ">=16.11.0"
   },
-  "packageManager": "pnpm@7.17.0"
+  "packageManager": "pnpm@7.17.0",
+  "dependencies": {
+    "@antfu/eslint-config-ts": "^0.39.7"
+  }
 }

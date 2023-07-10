@@ -17,14 +17,15 @@
     "removeComments": false,
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
-    "types": ["puppeteer", "node"],
+    "types": ["node"],
     "rootDir": ".",
     "paths": {
-
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": [
-    "packages/global.d.ts",
-    "packages/*/src",
+    "packages",
+    "script",
+    "utils"
   ]
 }

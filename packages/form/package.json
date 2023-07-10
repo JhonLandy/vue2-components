@@ -1,0 +1,16 @@
+{
+  "name": "@nuomi/form",
+  "version": "1.0.0",
+  "description": "",
+  "author": "CC",
+  "license": "ISC",
+  "keywords": ["form"],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "element-ui": "2.15.12",
+    "vue": "2.6.0"
+  }
+}
