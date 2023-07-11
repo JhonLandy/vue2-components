@@ -14,7 +14,6 @@
   "author": "CC",
   "license": "ISC",
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.39.7",
     "@rollup/plugin-alias": "^5.0.0",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-json": "^6.0.0",
@@ -61,8 +60,5 @@
   "engines": {
     "node": ">=16.11.0"
   },
-  "packageManager": "pnpm@7.17.0",
-  "dependencies": {
-    "@antfu/eslint-config-ts": "^0.39.7"
-  }
+  "packageManager": "pnpm@7.17.0"
 }
