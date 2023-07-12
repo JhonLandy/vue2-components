@@ -1,13 +1,14 @@
-import chalk from "chalk"
-import ora from "ora"
-const spinner = ora({ color: "blue" })
+import chalk from 'chalk';
+import ora from 'ora';
+
+const spinner = ora({ color: 'blue' });
 /**
  * @description 文字一般颜色
  * @param { string } text
  * @return { string }
  */
 function tc(text) {
-  return chalk.cyan(text)
+  return chalk.cyan(text);
 }
 /**
  * @description 操作成功颜色
@@ -15,7 +16,7 @@ function tc(text) {
  * @return { string }
  */
 function ts(text) {
-  return chalk.green(text)
+  return chalk.green(text);
 }
 /**
  * @description 操作失败颜色
@@ -23,7 +24,7 @@ function ts(text) {
  * @return { string }
  */
 function tf(text) {
-  return chalk.red(text)
+  return chalk.red(text);
 }
 /**
  * @description 操作失败颜色
@@ -31,7 +32,7 @@ function tf(text) {
  * @return { string }
  */
 function tw(text) {
-  return chalk.yellow(text)
+  return chalk.yellow(text);
 }
 
 /**
@@ -46,19 +47,23 @@ function tw(text) {
  */
 class Log {
   static success(msg) {
-    spinner.succeed(ts(msg))
+    spinner.succeed(ts(msg));
   }
+
   static info(msg) {
-    spinner.info(tc(msg))
+    spinner.info(tc(msg));
   }
+
   static warn(msg) {
-    spinner.warn(tw(msg))
+    spinner.warn(tw(msg));
   }
+
   static error(msg) {
-    spinner.fail(tf(msg))
+    spinner.fail(tf(msg));
   }
+
   static loading(msg) {
-    spinner.start(tc(msg))
+    spinner.start(tc(msg));
   }
 }
-export default Log
+export default Log;
