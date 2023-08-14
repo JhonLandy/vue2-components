@@ -1,6 +1,6 @@
 import FlipNumber from './src/FlipNumber.vue';
 
-export default Object(FlipNumber, {
+export default Object.assign(FlipNumber, {
   install(Vue) {
     if (!Vue) {
       // eslint-disable-next-line no-param-reassign
