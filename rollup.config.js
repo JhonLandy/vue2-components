@@ -5,7 +5,6 @@ import { fileURLToPath } from 'node:url';
 import postcss from 'rollup-plugin-postcss';
 // import replace from '@rollup/plugin-replace'
 import json from '@rollup/plugin-json';
-import terser from '@rollup/plugin-terser';
 
 // import chalk from 'chalk'
 import alias from '@rollup/plugin-alias';
@@ -64,14 +63,14 @@ export default {
       target: 'es2019',
       // define: resolveDefine()
     }),
-    terser({
-      module: /^esm/.test(format),
-      compress: {
-        ecma: 2015,
-        pure_getters: true,
-      },
-      safari10: true,
-    }),
+    // terser({
+    //   module: /^esm/.test(format),
+    //   compress: {
+    //     ecma: 2015,
+    //     pure_getters: true,
+    //   },
+    //   safari10: true,
+    // }),
     polyfillNode(),
     json(),
     postcss({
