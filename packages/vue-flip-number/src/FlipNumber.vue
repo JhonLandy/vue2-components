@@ -16,6 +16,7 @@
 import Flip from './Flip.vue';
 
 export default {
+  name: 'VueFlipNumber',
   components: { Flip },
   props: {
     value: {
