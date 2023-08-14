@@ -1,5 +1,15 @@
 {
     "name": "nuomi-vue-flip-number",
+    "description": "数字翻页变化",
     "version": "3.1.0",
-    "main": "./dist/esm/index.js"   
+    "main": "./dist/esm/index.js",
+    "keywords": [
+        "flip",
+        "flip-number",
+        "vue2"
+      ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JhonLandy/components/tree/main/packages/vue-flip-number"
+    }   
 }
