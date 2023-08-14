@@ -1,5 +1,5 @@
 {
     "name": "nuomi-vue-flip-number",
-    "version": "2.2.0",
+    "version": "2.8.0",
     "main": "./dist/esm/index.js"   
 }
