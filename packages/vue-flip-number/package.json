@@ -1,0 +1,6 @@
+{
+  "name": "@nuomi/vue-flip-number",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/esm/index.js"
+}

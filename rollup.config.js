@@ -1,9 +1,11 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-
+// eslint-disable-next-line import/no-extraneous-dependencies
+import postcss from 'rollup-plugin-postcss';
 // import replace from '@rollup/plugin-replace'
 import json from '@rollup/plugin-json';
+import terser from '@rollup/plugin-terser';
 
 // import chalk from 'chalk'
 import alias from '@rollup/plugin-alias';
@@ -50,7 +52,7 @@ export default {
     banner: '/* Written by @YuanChengLang */',
   },
   plugins: [
-    VuePlugin(),
+    VuePlugin({ css: false }),
     del({ targets: 'dist/*' }),
     alias({}),
     nodeResolve(),
@@ -62,15 +64,19 @@ export default {
       target: 'es2019',
       // define: resolveDefine()
     }),
-    // terser({
-    //   module: /^esm/.test(format),
-    //   compress: {
-    //     ecma: 2015,
-    //     pure_getters: true
-    //   },
-    //   safari10: true
-    // }),
+    terser({
+      module: /^esm/.test(format),
+      compress: {
+        ecma: 2015,
+        pure_getters: true,
+      },
+      safari10: true,
+    }),
     polyfillNode(),
     json(),
+    postcss({
+      extract: true,
+      plugins: [],
+    }),
   ],
 };
