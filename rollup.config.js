@@ -75,7 +75,6 @@ export default {
     polyfillNode(),
     json(),
     postcss({
-      extract: true,
       plugins: [],
     }),
   ],
