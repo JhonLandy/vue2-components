@@ -6,6 +6,6 @@ export default Object(FlipNumber, {
       // eslint-disable-next-line no-param-reassign
       Vue = window.Vue;
     }
-    Vue.install(FlipNumber);
+    Vue.component('VueFlipNumber', FlipNumber);
   },
 });

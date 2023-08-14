@@ -1,5 +1,5 @@
 {
-    "name": "@nuomi/vue-flip-number",
+    "name": "nuomi-vue-flip-number",
     "version": "0.1.0",
     "main": "./dist/esm/index.js"   
 }
