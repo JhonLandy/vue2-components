@@ -51,9 +51,6 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'vue',
-  ],
-  rules: {
-  },
+  plugins: ['vue'],
+  rules: {},
 };

@@ -1,7 +1,7 @@
 {
     "name": "nuomi-vue-flip-number",
     "description": "数字翻页变化",
-    "version": "3.1.2",
+    "version": "3.2.2",
     "main": "./dist/esm/index.js",
     "keywords": [
         "flip",

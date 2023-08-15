@@ -196,6 +196,10 @@ export default {
         z-index: 1;
         transform: rotateX(360deg)
     }
+    0% {
+        z-index: 1;
+        transform: rotateX(320deg)
+    }
     50%, 100% {
         z-index: 1;
         transform: rotateX(270deg)
