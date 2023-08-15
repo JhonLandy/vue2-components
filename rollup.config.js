@@ -28,7 +28,7 @@ const format = process.env.FORMAT || 'esm';
 const isPro = process.env.NODE_ENV === 'production';
 const plugins = [
   VuePlugin({ css: false }),
-  del({ targets: 'dist/*' }),
+  del({ targets: `${entry}/dist/*` }),
   alias({}),
   nodeResolve(),
   commonJS(),
