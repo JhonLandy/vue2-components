@@ -4,11 +4,10 @@ import { fileURLToPath } from 'node:url';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import postcss from 'rollup-plugin-postcss';
 // import replace from '@rollup/plugin-replace'
-import json from '@rollup/plugin-json';
-
-// import chalk from 'chalk'
 import alias from '@rollup/plugin-alias';
 import commonJS from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
+import autoprefixer from 'autoprefixer';
 import del from 'rollup-plugin-delete';
 import esbuild from 'rollup-plugin-esbuild';
 import polyfillNode from 'rollup-plugin-polyfill-node';
@@ -25,7 +24,28 @@ const resolve = (p) => path.resolve(packageDir, p);
 const entry = process.env.ENTRY;
 // 模块格式
 const format = process.env.FORMAT || 'esm';
+// 是否生产环境
+const isPro = process.env.NODE_ENV === 'production';
+const plugins = [
+  VuePlugin({ css: false }),
+  del({ targets: 'dist/*' }),
+  alias({}),
+  nodeResolve(),
+  commonJS(),
+  esbuild({
+    //   tsconfig: path.resolve(__dirname, 'tsconfig.json'),
+    sourceMap: !isPro,
+    minify: isPro,
+    target: 'es2019',
+  }),
 
+  polyfillNode(),
+  json(),
+  postcss({
+    minimize: isPro,
+    plugins: [autoprefixer],
+  }),
+];
 const output = {
   esm: {
     format: 'esm',
@@ -48,33 +68,7 @@ export default {
   input: resolve(`${entry}/index.js`),
   output: {
     ...output[format],
-    banner: '/* Written by @YuanChengLang */',
+    banner: '/* Written by @nuomi */',
   },
-  plugins: [
-    VuePlugin({ css: false }),
-    del({ targets: 'dist/*' }),
-    alias({}),
-    nodeResolve(),
-    commonJS(),
-    esbuild({
-      tsconfig: path.resolve(__dirname, 'tsconfig.json'),
-      sourceMap: false,
-      minify: false,
-      target: 'es2019',
-      // define: resolveDefine()
-    }),
-    // terser({
-    //   module: /^esm/.test(format),
-    //   compress: {
-    //     ecma: 2015,
-    //     pure_getters: true,
-    //   },
-    //   safari10: true,
-    // }),
-    polyfillNode(),
-    json(),
-    postcss({
-      plugins: [],
-    }),
-  ],
+  plugins,
 };

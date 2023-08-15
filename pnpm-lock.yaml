@@ -108,15 +108,9 @@ importers:
       rollup-plugin-postcss:
         specifier: ^4.0.2
         version: 4.0.2(postcss@8.4.27)
-      rollup-plugin-scss:
-        specifier: '3'
-        version: 3.0.0
       rollup-plugin-vue:
         specifier: 5.1.9
         version: registry.npmmirror.com/rollup-plugin-vue@5.1.9(postcss@8.4.27)(vue-template-compiler@2.7.14)
-      sass:
-        specifier: ^1.65.1
-        version: 1.65.1
       simple-git-hooks:
         specifier: ^2.8.1
         version: registry.npmmirror.com/simple-git-hooks@2.8.1
@@ -821,10 +815,12 @@ packages:
   /anymatch@3.1.3:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
+    requiresBuild: true
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
     dev: true
+    optional: true
 
   /aproba@2.0.0:
     resolution: {integrity: sha512-lYe4Gx7QT+MKGbDsA+Z+he/Wtef0BiwDOlK/XkBrdfsh9J/jPPXbX0tE9x9cl27Tmu5gg3QUbUrQYa/y+KOHPQ==}
@@ -907,7 +903,9 @@ packages:
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dev: true
+    optional: true
 
   /bl@5.1.0:
     resolution: {integrity: sha512-tv1ZJHLfTDnXE6tMHv73YgSJaWR2AFuPwMntBe7XL/GBFHnT0CLnsHMogfk5+GzCDC5ZWarSCYaIGATZt9dNsQ==}
@@ -944,7 +942,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001434
+      caniuse-lite: 1.0.30001520
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10(browserslist@4.21.4)
@@ -1042,13 +1040,13 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001434
+      caniuse-lite: 1.0.30001520
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
 
-  /caniuse-lite@1.0.30001434:
-    resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==}
+  /caniuse-lite@1.0.30001520:
+    resolution: {integrity: sha512-tahF5O9EiiTzwTUqAeFjIZbn4Dnqxzz7ktrgGlMYNLH43Ul26IgTMH/zvL3DG0lZxBYnlT04axvInszUsZULdA==}
     dev: true
 
   /chalk@1.1.3:
@@ -1086,6 +1084,7 @@ packages:
   /chokidar@3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
     engines: {node: '>= 8.10.0'}
+    requiresBuild: true
     dependencies:
       anymatch: 3.1.3
       braces: 3.0.2
@@ -1097,6 +1096,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+    optional: true
 
   /chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
@@ -2067,6 +2067,12 @@ packages:
     requiresBuild: true
     dev: true
 
+  /graceful-fs@4.2.11:
+    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /grapheme-splitter@1.0.4:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: false
@@ -2219,7 +2225,9 @@ packages:
 
   /immutable@4.1.0:
     resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
+    requiresBuild: true
     dev: true
+    optional: true
 
   /import-cwd@3.0.0:
     resolution: {integrity: sha512-4pnzH16plW+hgvRECbDWpQl3cqtvSofHWh44met7ESfZ8UZOWWddm8hEyDTqREJ9RbYHY8gi8DqmaelApoOGMg==}
@@ -2303,9 +2311,11 @@ packages:
   /is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dependencies:
       binary-extensions: 2.2.0
     dev: true
+    optional: true
 
   /is-boolean-object@1.1.2:
     resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
@@ -2504,7 +2514,7 @@ packages:
       tslib: registry.npmmirror.com/tslib@1.14.1
     optionalDependencies:
       errno: 0.1.8
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       image-size: 0.5.5
       make-dir: 2.1.0
       mime: 1.6.0
@@ -2950,7 +2960,9 @@ packages:
   /normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dev: true
+    optional: true
 
   /normalize-url@6.1.0:
     resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
@@ -3700,9 +3712,11 @@ packages:
   /readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
+    requiresBuild: true
     dependencies:
       picomatch: 2.3.1
     dev: true
+    optional: true
 
   /redent@3.0.0:
     resolution: {integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==}
@@ -3826,12 +3840,6 @@ packages:
       - ts-node
     dev: true
 
-  /rollup-plugin-scss@3.0.0:
-    resolution: {integrity: sha512-UldNaNHEon2a5IusHvj/Nnwc7q13YDvbFxz5pfNbHBNStxGoUNyM+0XwAA/UafJ1u8XRPGdBMrhWFthrrGZdWQ==}
-    dependencies:
-      rollup-pluginutils: 2.8.2
-    dev: true
-
   /rollup-pluginutils@2.8.2:
     resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
     dependencies:
@@ -3883,11 +3891,13 @@ packages:
     resolution: {integrity: sha512-9DINwtHmA41SEd36eVPQ9BJKpn7eKDQmUHmpI0y5Zv2Rcorrh0zS+cFrt050hdNbmmCNKTW3hV5mWfuegNRsEA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+    requiresBuild: true
     dependencies:
       chokidar: 3.5.3
       immutable: 4.1.0
       source-map-js: 1.0.2
     dev: true
+    optional: true
 
   /scss-tokenizer@0.4.3:
     resolution: {integrity: sha512-raKLgf1LI5QMQnG+RxHz6oK0sL3x3I4FN2UDLqgLOGO8hodECNnNh5BXn7fAyBxrA8zVzdQizQ6XjNJQ+uBwMw==}
@@ -4944,7 +4954,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: registry.npmmirror.com/browserslist@4.21.4
-      caniuse-lite: registry.npmmirror.com/caniuse-lite@1.0.30001434
+      caniuse-lite: 1.0.30001520
       fraction.js: registry.npmmirror.com/fraction.js@4.2.0
       normalize-range: registry.npmmirror.com/normalize-range@0.1.2
       picocolors: registry.npmmirror.com/picocolors@1.0.0
@@ -5004,7 +5014,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: registry.npmmirror.com/caniuse-lite@1.0.30001434
+      caniuse-lite: 1.0.30001520
       electron-to-chromium: registry.npmmirror.com/electron-to-chromium@1.4.284
       node-releases: registry.npmmirror.com/node-releases@2.0.6
       update-browserslist-db: registry.npmmirror.com/update-browserslist-db@1.0.10(browserslist@4.21.4)
@@ -5015,12 +5025,6 @@ packages:
     name: builtin-modules
     version: 3.3.0
     engines: {node: '>=6'}
-    dev: true
-
-  registry.npmmirror.com/caniuse-lite@1.0.30001434:
-    resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001434.tgz}
-    name: caniuse-lite
-    version: 1.0.30001434
     dev: true
 
   registry.npmmirror.com/character-parser@2.2.0:

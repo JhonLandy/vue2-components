@@ -8,7 +8,7 @@ import Log from '../utils/logger.js';
 
 const args = minimist(process.argv.slice(2));
 const format = args.format || args.f;
-
+const env = args.env || args.e;
 function resolve(...dir) {
   return path.resolve(process.cwd(), ...dir);
 }
@@ -35,7 +35,7 @@ async function runParallel(packages, runner, maxConcurrency) {
 
   // eslint-disable-next-line no-restricted-syntax
   for (const pkg of packages) {
-    const p = Promise.resolve().then(() => runner(pkg, format));
+    const p = Promise.resolve().then(() => runner(pkg));
     result.push(p);
     if (packages.length > maxConcurrency) {
       const index = executing.indexOf(p);
@@ -53,7 +53,7 @@ async function runParallel(packages, runner, maxConcurrency) {
 function build(entry) {
   return execa(
     'rollup',
-    ['-c', '--environment', [`ENTRY:${entry}`, `FORMAT:${format}`]],
+    ['-c', '--environment', [`ENTRY:${entry}`, `FORMAT:${format}`, `NODE_ENV:${env}`]],
     { stdio: 'inherit' },
   );
 }
